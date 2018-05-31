@@ -8,3 +8,21 @@
 路由网关 ->  service-zuul : 8895
 配置中心服务端 ->  config-server : 8896
 配置中心客户端 ->  config-client : 8897
+
+
+
+
+
+
+=========================== 本地代码通过idea上传到远程github 步骤==========================
+1. 登录github 进入 your profile
+2. 点击第二个选项卡 Repositories ,点击new  填写Repository name, 描述， 选择public 其他可不项，点击create repository
+3. 本地安装windows 环境 git 客户端
+4. idea setting-> Version Control -> git -> D:\Program Files\Git\bin\git.exe 测试是否成功
+5. 创建本地仓库 VCS -> Import into Version Control -> createGit Repository
+6. 提交代码到本地仓库 先add再commit 这里只是push到本地仓库
+7. 桌面右击 git base here 进入到你要push代码的目录 命令同dos命令
+8. $ git remote add origin https://github.com/chen2689163935/springcloud
+    (后面的地址是github远程地址, 注意这里由于之前没有登录github, 此处会弹框让你输入github 账号密码)
+9. 执行上面命令完成后执行 $ git push -u origin master
+10. push 完成，现在可以在远程github上面看到你刚刚上传的代码。
