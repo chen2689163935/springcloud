@@ -1,0 +1,25 @@
+#指定服务器注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8890/eureka/
+
+# 指定应用端口
+server:
+  port: 8895
+
+#指定应用于服务名称
+spring:
+  application:
+    name: service-zuul
+
+
+#制定策略，以/api-a/开头的请求都转发给service-ribbon服务， 以/api-b/开头的请求都转发给service-feign服务
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-ribbon
+    api-b:
+      path: /api-b/**
+      serviceId: service-feign

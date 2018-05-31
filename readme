@@ -1,0 +1,10 @@
+端口分配情况，每创建一个应用，端口都需要在此记录，避免遗忘造成冲突
+
+服务注册中心->  eurekaServer : 8890
+服务消费者-> eurekaClient : 8891  (伪集群，客户端实例1)
+服务消费者-> eurekaClient : 8892  (伪集群，客户端实例2)
+集群，断路器 -> service-ribbon : 8893  (http://localhost:8893/hystrix)监控进入仪表图
+集群，断路器 -> service-feign : 8894
+路由网关 ->  service-zuul : 8895
+配置中心服务端 ->  config-server : 8896
+配置中心客户端 ->  config-client : 8897
